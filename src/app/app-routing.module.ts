@@ -1,11 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
+import { MenuComponent } from './menu/menu.component';
+import { SignupComponent } from './menu/signup/signup.component';
+import { UserProfileComponent } from './menu/user-profile/user-profile.component';
+
 
 const routes: Routes = [
   {
-    path: 'contact',
-    component: ContactComponent
+    path:'menu',
+    component: MenuComponent,
+    children: [
+      {
+        path:'', 
+        redirectTo: 'user'
+      },
+      {
+        path:'user', 
+        component:UserProfileComponent
+      },
+      {
+        path:'signup', 
+        component:SignupComponent
+      }
+    ]
+  },
+  {
+    path:'**',
+    redirectTo: 'menu'
   }
 ];
 

@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [				
     AppComponent,
-      ContactComponent
+      MenuComponent,
+      MenuComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
